@@ -3,11 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
     "build": "next build",
+    "clean": "git clean -xdf .cache .turbo dist node_modules .next",
+    "clean:cache": "git clean -xdf .cache",
+    "dev": "next dev",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint .",
     "start": "next start",
-    "lint": "next lint"
+    "typecheck": "tsc --noEmit"
   },
+  "prettier": "@repo/prettier-config",
   "dependencies": {
     "@repo/ui": "workspace:*",
     "next": "14.2.6",
@@ -16,12 +21,13 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.6",
-    "typescript": "^5"
+    "@repo/prettier-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "22.7.9",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "eslint": "9.13.0",
+    "jiti": "2.3.3",
+    "typescript": "5.6.3"
   }
 }
